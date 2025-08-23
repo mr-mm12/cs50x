@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        let part1Correct = false;
+        let part2Correct = false;
+
+        function checkAnswer(button, correct) {
+            // Reset all buttons
+            let buttons = button.parentElement.querySelectorAll("button");
+            buttons.forEach(b => b.style.backgroundColor = "");
+
+            let feedback = document.getElementById("feedback1");
+            if (correct) {
+                button.style.backgroundColor = "lightgreen";
+                feedback.innerHTML = "✅ Correct! Bitcoin had the highest price.";
+                part1Correct = true;
+            } else {
+                button.style.backgroundColor = "salmon";
+                feedback.innerHTML = "❌ Incorrect. Try again!";
+                part1Correct = false;
+            }
+            checkAllCorrect();
+        }
+
+        function checkFreeResponse() {
+            let input = document.getElementById("answer2").value.trim();
+            let feedback = document.getElementById("feedback2");
+
+            if (input === "2008") {
+                feedback.innerHTML = "✅ Correct! Bitcoin was created in 2008.";
+                feedback.style.color = "green";
+                part2Correct = true;
+            } else {
+                feedback.innerHTML = "❌ Incorrect. Hint: Bitcoin was created in the 21st century.";
+                feedback.style.color = "red";
+                part2Correct = false;
+            }
+            checkAllCorrect();
+        }
+
+        function checkAllCorrect() {
+            if (part1Correct && part2Correct) {
+                document.getElementById("secret").style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <!-- Part 1 -->
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+            <hr>
+            <p>Which cryptocurrency had the highest price in 2025?</p>
+            <button onclick="checkAnswer(this, false)">Ethereum</button>
+            <button onclick="checkAnswer(this, false)">Tron</button>
+            <button onclick="checkAnswer(this, false)">Litecoin</button>
+            <button onclick="checkAnswer(this, true)">Bitcoin</button>
+            <button onclick="checkAnswer(this, false)">Ripple</button>
+            <p id="feedback1"></p>
+        </div>
+
+        <!-- Part 2 -->
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <p>In which year was Bitcoin created?</p>
+            <input type="text" id="answer2" placeholder="Enter your answer">
+            <button onclick="checkFreeResponse()">Submit</button>
+            <p id="feedback2"></p>
+        </div>
+    </div>
+
+    <!-- Hidden text -->
+    <div id="secret" style="display:none; text-align:center; margin-top:20px; font-weight:bold; font-size:20px; color:blue;">
+        Mohammadreza_mokhtari_kia
+    </div>
+</body>
+</html>

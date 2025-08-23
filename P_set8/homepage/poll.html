@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Polls - Crypto Hub</title>
+
+    <!-- Bootstrap 4.5.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+          crossorigin="anonymous">
+
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">Crypto Hub</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="introduction.html">Introduction</a></li>
+          <li class="nav-item"><a class="nav-link" href="buy.html">How to Buy</a></li>
+          <li class="nav-item"><a class="nav-link" href="risks.html">Risks</a></li>
+          <li class="nav-item"><a class="nav-link active" href="poll.html">Poll</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4">Feedback & Favorite Coin Polls</h1>
+    <div class="container">
+        <h1>Mohammadreza_mokhtari_kia</h1>
+        <!-- Poll 1: Usefulness -->
+        <section class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">1) Was this content helpful?</h3>
+                <p class="card-text">Please tell us how useful you found the information on this site.</p>
+
+                <form id="usefulnessForm">
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="usefulness" id="useVeryHigh" value="Very High">
+                        <label class="form-check-label" for="useVeryHigh">Very High</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="usefulness" id="useHigh" value="High">
+                        <label class="form-check-label" for="useHigh">High</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="usefulness" id="useMedium" value="Medium">
+                        <label class="form-check-label" for="useMedium">Medium</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="usefulness" id="useLow" value="Low">
+                        <label class="form-check-label" for="useLow">Low</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="usefulness" id="useVeryLow" value="Very Low">
+                        <label class="form-check-label" for="useVeryLow">Very Low</label>
+                    </div>
+
+                    <!-- Buttons پایین فرم -->
+                    <div class="mt-3">
+                        <button type="button" id="submitUseBtn" class="btn btn-primary mr-2">Submit</button>
+                        <button type="button" id="resetUseBtn" class="btn btn-outline-secondary">Reset Results</button>
+                    </div>
+                </form>
+
+                <div id="usefulnessMessage" class="mt-3"></div>
+
+                <!-- Results area -->
+                <div id="usefulnessResults" class="mt-4 d-none">
+                    <h5>Results</h5>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Very High <span id="countVeryHigh" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barVeryHigh" class="progress-bar" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">High <span id="countHigh" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barHigh" class="progress-bar bg-info" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Medium <span id="countMedium" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barMedium" class="progress-bar bg-secondary" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Low <span id="countLow" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barLow" class="progress-bar bg-warning" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Very Low <span id="countVeryLow" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barVeryLow" class="progress-bar bg-danger" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Poll 2: Favorite coin -->
+        <section class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">2) Which cryptocurrency do you like the most?</h3>
+                <p class="card-text">Choose your favorite coin below.</p>
+
+                <form id="favoriteForm">
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="favorite" id="favBTC" value="Bitcoin">
+                        <label class="form-check-label" for="favBTC">Bitcoin</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="favorite" id="favETH" value="Ethereum">
+                        <label class="form-check-label" for="favETH">Ethereum</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="favorite" id="favLTC" value="Litecoin">
+                        <label class="form-check-label" for="favLTC">Litecoin</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="favorite" id="favXRP" value="Ripple">
+                        <label class="form-check-label" for="favXRP">Ripple</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="favorite" id="favSOL" value="Solana">
+                        <label class="form-check-label" for="favSOL">Solana</label>
+                    </div>
+                    <div class="form-check poll-option">
+                        <input class="form-check-input" type="radio" name="favorite" id="favADA" value="Cardano">
+                        <label class="form-check-label" for="favADA">Cardano</label>
+                    </div>
+                    <div class="form-check poll-option d-flex align-items-center">
+                        <input class="form-check-input" type="radio" name="favorite" id="favOther" value="Other">
+                        <label class="form-check-label mr-2" for="favOther">Other</label>
+                        <input type="text" id="otherText" class="form-control form-control-sm" placeholder="If Other, type name" style="width: 200px;" disabled>
+                    </div>
+
+                    <!-- Buttons پایین فرم -->
+                    <div class="mt-3">
+                        <button type="button" id="submitFavBtn" class="btn btn-primary mr-2">Submit</button>
+                        <button type="button" id="resetFavBtn" class="btn btn-outline-secondary">Reset Results</button>
+                    </div>
+                </form>
+
+                <div id="favoriteMessage" class="mt-3"></div>
+
+                <!-- Favorite results -->
+                <div id="favoriteResults" class="mt-4 d-none">
+                    <h5>Results</h5>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Bitcoin <span id="countBTC" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barBTC" class="progress-bar" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Ethereum <span id="countETH" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barETH" class="progress-bar bg-info" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Litecoin <span id="countLTC" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barLTC" class="progress-bar bg-success" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Ripple <span id="countXRP" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barXRP" class="progress-bar bg-warning" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Solana <span id="countSOL" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barSOL" class="progress-bar bg-primary" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Cardano <span id="countADA" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barADA" class="progress-bar bg-secondary" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+
+                    <div class="result-row">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="result-label">Other <span id="countOther" class="text-muted ml-2">0</span></div>
+                        </div>
+                        <div class="progress">
+                          <div id="barOther" class="progress-bar bg-dark" role="progressbar" style="width: 0%">0%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+
+    <script>
+    (function() {
+        // Keys
+        const KEY_USE = 'poll_usefulness_counts_v2';
+        const KEY_FAV = 'poll_favorite_counts_v2';
+
+        // Default structures
+        const defaultUse = { "Very High": 0, "High": 0, "Medium": 0, "Low": 0, "Very Low": 0 };
+        const defaultFav = { Bitcoin: 0, Ethereum: 0, Litecoin: 0, Ripple: 0, Solana: 0, Cardano: 0, Other: 0 };
+
+        // Helpers
+        function read(key, defaultVal) {
+            const raw = localStorage.getItem(key);
+            return raw ? JSON.parse(raw) : Object.assign({}, defaultVal);
+        }
+        function write(key, val) {
+            localStorage.setItem(key, JSON.stringify(val));
+        }
+
+        // UI refs
+        const submitUseBtn = document.getElementById('submitUseBtn');
+        const resetUseBtn = document.getElementById('resetUseBtn');
+        const useMsg = document.getElementById('usefulnessMessage');
+        const useResults = document.getElementById('usefulnessResults');
+
+        const submitFavBtn = document.getElementById('submitFavBtn');
+        const resetFavBtn = document.getElementById('resetFavBtn');
+        const favMsg = document.getElementById('favoriteMessage');
+        const favResults = document.getElementById('favoriteResults');
+
+        const otherText = document.getElementById('otherText');
+        const favOtherRadio = document.getElementById('favOther');
+        const favForm = document.getElementById('favoriteForm');
+
+        // enable/disable other text input
+        favForm.addEventListener('change', () => {
+            if (favOtherRadio.checked) otherText.disabled = false;
+            else { otherText.disabled = true; otherText.value = ''; }
+        });
+
+        // render functions
+        function renderUseResults(counts) {
+            const total = Object.values(counts).reduce((a,b)=>a+b,0);
+            // update counts text and bars
+            document.getElementById('countVeryHigh').textContent = counts["Very High"];
+            document.getElementById('barVeryHigh').style.width = (total ? (counts["Very High"]/total*100) : 0) + '%';
+            document.getElementById('barVeryHigh').textContent = total ? Math.round(counts["Very High"]/total*100)+'%' : '0%';
+
+            document.getElementById('countHigh').textContent = counts["High"];
+            document.getElementById('barHigh').style.width = (total ? (counts["High"]/total*100) : 0) + '%';
+            document.getElementById('barHigh').textContent = total ? Math.round(counts["High"]/total*100)+'%' : '0%';
+
+            document.getElementById('countMedium').textContent = counts["Medium"];
+            document.getElementById('barMedium').style.width = (total ? (counts["Medium"]/total*100) : 0) + '%';
+            document.getElementById('barMedium').textContent = total ? Math.round(counts["Medium"]/total*100)+'%' : '0%';
+
+            document.getElementById('countLow').textContent = counts["Low"];
+            document.getElementById('barLow').style.width = (total ? (counts["Low"]/total*100) : 0) + '%';
+            document.getElementById('barLow').textContent = total ? Math.round(counts["Low"]/total*100)+'%' : '0%';
+
+            document.getElementById('countVeryLow').textContent = counts["Very Low"];
+            document.getElementById('barVeryLow').style.width = (total ? (counts["Very Low"]/total*100) : 0) + '%';
+            document.getElementById('barVeryLow').textContent = total ? Math.round(counts["Very Low"]/total*100)+'%' : '0%';
+
+            useResults.classList.remove('d-none');
+        }
+
+        function renderFavResults(counts) {
+            const total = Object.values(counts).reduce((a,b)=>a+b,0);
+
+            document.getElementById('countBTC').textContent = counts.Bitcoin || 0;
+            document.getElementById('barBTC').style.width = (total ? (counts.Bitcoin/total*100) : 0) + '%';
+            document.getElementById('barBTC').textContent = total ? Math.round(counts.Bitcoin/total*100)+'%' : '0%';
+
+            document.getElementById('countETH').textContent = counts.Ethereum || 0;
+            document.getElementById('barETH').style.width = (total ? (counts.Ethereum/total*100) : 0) + '%';
+            document.getElementById('barETH').textContent = total ? Math.round(counts.Ethereum/total*100)+'%' : '0%';
+
+            document.getElementById('countLTC').textContent = counts.Litecoin || 0;
+            document.getElementById('barLTC').style.width = (total ? (counts.Litecoin/total*100) : 0) + '%';
+            document.getElementById('barLTC').textContent = total ? Math.round(counts.Litecoin/total*100)+'%' : '0%';
+
+            document.getElementById('countXRP').textContent = counts.Ripple || 0;
+            document.getElementById('barXRP').style.width = (total ? (counts.Ripple/total*100) : 0) + '%';
+            document.getElementById('barXRP').textContent = total ? Math.round(counts.Ripple/total*100)+'%' : '0%';
+
+            document.getElementById('countSOL').textContent = counts.Solana || 0;
+            document.getElementById('barSOL').style.width = (total ? (counts.Solana/total*100) : 0) + '%';
+            document.getElementById('barSOL').textContent = total ? Math.round(counts.Solana/total*100)+'%' : '0%';
+
+            document.getElementById('countADA').textContent = counts.Cardano || 0;
+            document.getElementById('barADA').style.width = (total ? (counts.Cardano/total*100) : 0) + '%';
+            document.getElementById('barADA').textContent = total ? Math.round(counts.Cardano/total*100)+'%' : '0%';
+
+            document.getElementById('countOther').textContent = counts.Other || 0;
+            document.getElementById('barOther').style.width = (total ? (counts.Other/total*100) : 0) + '%';
+            document.getElementById('barOther').textContent = total ? Math.round(counts.Other/total*100)+'%' : '0%';
+
+            favResults.classList.remove('d-none');
+        }
+
+        // initialize UI from storage
+        const storedUse = read(KEY_USE, defaultUse);
+        const storedFav = read(KEY_FAV, defaultFav);
+        renderUseResults(storedUse);
+        renderFavResults(storedFav);
+
+        // Submit usefulness
+        submitUseBtn.addEventListener('click', () => {
+            const sel = document.querySelector('input[name="usefulness"]:checked');
+            if (!sel) {
+                useMsg.textContent = 'Please select an option.';
+                useMsg.className = 'text-danger';
+                return;
+            }
+            useMsg.textContent = 'Thanks for your feedback!';
+            useMsg.className = 'text-success';
+            const counts = read(KEY_USE, defaultUse);
+            const key = sel.value;
+            counts[key] = (counts[key] || 0) + 1;
+            write(KEY_USE, counts);
+            renderUseResults(counts);
+
+            // small debounce
+            submitUseBtn.disabled = true;
+            setTimeout(()=> submitUseBtn.disabled = false, 900);
+        });
+
+        // Reset usefulness
+        resetUseBtn.addEventListener('click', () => {
+            if (!confirm('Reset usefulness poll results? This will clear saved results from your browser.')) return;
+            write(KEY_USE, defaultUse);
+            renderUseResults(defaultUse);
+            useMsg.textContent = 'Results reset.';
+            useMsg.className = 'text-muted';
+        });
+
+        // Submit favorite
+        submitFavBtn.addEventListener('click', () => {
+            const sel = document.querySelector('input[name="favorite"]:checked');
+            if (!sel) {
+                favMsg.textContent = 'Please select an option.';
+                favMsg.className = 'text-danger';
+                return;
+            }
+
+            let choice = sel.value;
+            if (choice === 'Other') {
+                const txt = otherText.value.trim();
+                // We treat custom names as Other for counting simplicity
+                choice = 'Other';
+            }
+
+            favMsg.textContent = 'Thanks for voting!';
+            favMsg.className = 'text-success';
+            const counts = read(KEY_FAV, defaultFav);
+            counts[choice] = (counts[choice] || 0) + 1;
+            write(KEY_FAV, counts);
+            renderFavResults(counts);
+
+            // small debounce
+            submitFavBtn.disabled = true;
+            setTimeout(()=> submitFavBtn.disabled = false, 900);
+        });
+
+        // Reset favorite
+        resetFavBtn.addEventListener('click', () => {
+            if (!confirm('Reset favorite poll results? This will clear saved results from your browser.')) return;
+            write(KEY_FAV, defaultFav);
+            renderFavResults(defaultFav);
+            favMsg.textContent = 'Results reset.';
+            favMsg.className = 'text-muted';
+        });
+
+    })();
+    </script>
+</body>
+</html>
