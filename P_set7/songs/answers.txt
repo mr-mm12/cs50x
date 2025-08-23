@@ -1,0 +1,13 @@
+I think one way would be to see which singers he
+listens to the most, because usually a singer sings
+a specific style of music, like classical or pop.
+We can determine what the user's vocal aura is by
+considering the name of the singer and the style of music they sing.
+
+
+This idea may not be very accurate because a singer
+may sing more than 1 style of music or the user may
+be interested in multiple genres of music.
+
+
+ -- Mohammadreza_mokhtari_kia
