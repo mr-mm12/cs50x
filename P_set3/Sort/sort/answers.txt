@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: I know that "Bubble Sort" is slow for large, unsorted data and fast for small or nearly sorted data. "sort1" was the most similar to this sentence, so I chose this sort as "Bubble Sort".
+
+sort2 uses: Merge Sort
+
+How do you know?: I know that "Merge Sort" is slow for small data and fast for big data. "sort2" was the most similar to this sentence, so I chose this sort as "Merge Sort".
+
+sort3 uses: Selection Sort
+
+How do you know?: I know that "Selection Sort" is slow for All big data and fast for Small data, limited memory "sort3" was the most similar to this sentence, so I chose this sort as "Selection Sort".
