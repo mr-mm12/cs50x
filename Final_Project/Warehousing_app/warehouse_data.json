@@ -1,0 +1,20 @@
+{
+  "products": [
+    {
+      "name": "banana",
+      "quantity": 5,
+      "transactions": [
+        {
+          "action": "initial",
+          "quantity": 5,
+          "datetime": "2025-08-22T20:35:21"
+        },
+        {
+          "action": "initial_replace",
+          "quantity": 5,
+          "datetime": "2025-08-22T20:35:21"
+        }
+      ]
+    }
+  ]
+}
