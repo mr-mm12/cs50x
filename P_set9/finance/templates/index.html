@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+<div class="table-responsive">
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th class="text-start">Symbol</th>
+            <th class="text-start">Name</th>
+            <th class="text-end">Shares</th>
+            <th class="text-end">Price</th>
+            <th class="text-end">Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in holdings %}
+        <tr>
+            <td class="text-start">{{ h.symbol }}</td>
+            <td class="text-start">{{ h.name }}</td>
+            <td class="text-end">{{ h.shares }}</td>
+            <td class="text-end">{{ h.price | usd }}</td>
+            <td class="text-end">{{ h.total | usd }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="4" class="text-end">Portfolio Total</th>
+            <th class="text-end">{{ portfolio_total | usd }}</th>
+        </tr>
+        <tr>
+            <th colspan="4" class="text-end">Cash</th>
+            <th class="text-end">{{ cash | usd }}</th>
+        </tr>
+        <tr>
+            <th colspan="4" class="text-end">Grand Total</th>
+            <th class="text-end">{{ grand_total | usd }}</th>
+        </tr>
+    </tfoot>
+</table>
+</div>
+<a class="btn btn-outline-secondary" href="/add-cash">Add Cash</a>
+{% endblock %}
