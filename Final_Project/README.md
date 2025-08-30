@@ -1,5 +1,4 @@
 # Warehousing app
-#### Video Demo:  <https://www.youtube.com/watch?v=dd9qcM_Ij-I>
 #### Description:
 
 Warehouse Management App
@@ -86,3 +85,4 @@ Why This Project Matters
 This app demonstrates how Python can be used to develop real-world applications quickly and efficiently while maintaining simplicity. Even a small project like this can provide valuable experience in GUI design, file management, data handling, and user interaction. It can serve as a foundation for larger, more advanced software projects in the future.
 
 By creating this program, I, Mohammadreza Mokhtari Kia, aimed to combine practical functionality with learning experience, showing that a teenager can develop real, usable software that helps people manage their business operations efficiently.
+
